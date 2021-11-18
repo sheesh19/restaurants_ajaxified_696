@@ -15,7 +15,11 @@ export default class extends Controller {
         },
             body: new FormData(this.formTarget)
         })
+            // then, there is a response. since we are only accepting json, we need to parse it into useful data             
         .then(response => response.json())
+            // then we will have data
+            // JSON parse error may be the Restaurant#create error             
+
         .then((data) => {
             // console.log(data)
             // if our inserted_item json exists, insert it at the bottom of our reviews
